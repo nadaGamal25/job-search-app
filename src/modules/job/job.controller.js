@@ -93,7 +93,7 @@ const getFilteredJobs = catchError(async (req, res, next) => {
 
 //Apply to Job
 const applyToJob=catchError(async(req,res)=>{
-    // req.body.userResume=req.file.filename
+     req.body.userResume=req.file.filename
     let job =await Application.create(req.body)
     res.status(201).json({message:'success',job})
     
